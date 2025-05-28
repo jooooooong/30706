@@ -1,4 +1,7 @@
-plotly
+import plotly
+
+# 이제 plotly 안의 기능을 사용 가능
+
 
 import streamlit as st
 import pandas as pd
