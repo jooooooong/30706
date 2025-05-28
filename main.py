@@ -22,4 +22,16 @@ def load_data():
 df = load_data()
 
 if not df.empty:
-    st.subheader("데이터 미리보기")
+    st.subheader("📊 기본 막대 그래프 시각화")
+
+    # 컬럼 선택
+    columns = df.columns.tolist()
+    x_axis = st.selectbox("X축 선택", columns)
+    y_axis = st.selectbox("Y축 선택", columns, index=1 if len(columns) > 1 else 0)
+
+    # Plotly 막대 그래프
+    fig = px.bar(df, x=x_axis, y=y_axis, title=f"{x_axis} vs {y_axis}")
+
+    st.plotly_chart(fig, use_container_width=True)
+else:
+    st.warning("⬆️ 데이터를 로드할 수 없어 시각화를 진행할 수 없습니다. 위의 오류 메시지를 확인해주세요.")
