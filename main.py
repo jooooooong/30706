@@ -22,4 +22,4 @@ def load_data():
 df = load_data()
 
 if not df.empty:
-    st.subhea
+    st.subheader("데이터 미리보기")
