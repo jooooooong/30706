@@ -6,6 +6,8 @@ import plotly.express as px
 st.set_page_config(page_title="데이터 시각화 앱", layout="wide")
 st.title("📊 구글 드라이브 데이터 Plotly 시각화")
 
+df = pd.read_csv('data.csv')
+
 # 데이터 URL (구글 드라이브 공유 링크)
 data_url = "https://drive.google.com/uc?export=download&id=1pwfON6doXyH5p7AOBJPfiofYlni0HVVY"
 
